@@ -82,7 +82,7 @@ Genres are pipe-separated and are selected from the following genres:
      - We need count of each movie to solve this problem and to do so we need to process data from **movies.dat** and **ratings.dat** files.
        - We use the concept of **Job chaining** in MapReduce for doing these multiple tasks. 
        
-      
+         ![](imgs/kpi_1.PNG)
        
      -  We get movie_id  **(key)**  and name **(value)** as output from **movieDataMapper** and movie_id **(key)**  and 1 **(value)** as output from **ratingDataMapper**.
      - Output of both the mappers is processed at **dataReducer** and  movie_id  **(key)** and its total count **(value)** is given as output.
@@ -92,12 +92,14 @@ Genres are pipe-separated and are selected from the following genres:
     
     
     
+    
+    
    ## KPI 2 ##   
      ### Recommend top 20 rated movies provided it's atleast watched/rated by 40 users. ###
      - We need the average rating for each movie to solve this problem to do so we need to process data from **movies.dat** and **ratings.dat** files.
        - We use the concept of **Job chaining** in MapReduce for doing these multiple tasks. 
      
-     
+         ![](imgs/kpi_2.PNG)
      
      - We get movie_id  **(key)**  and name **(value)** as output from **movieDataMapper** and movie_id **(key)**  and rating **(value)** as output from **ratingDataMapper**.
      - Output of both the mappers is processed in **dataReducer** and  movie_id  **(key)** and average rating **(value)** is given as output.
@@ -108,8 +110,9 @@ Genres are pipe-separated and are selected from the following genres:
    ## KPI 3 ##
      ### How have the genres ranked by Average Rating, for each profession and age group. The age groups to be considered are: 18-35, 36-50 and 50+. ###
      - To find average rating of a genre for each profession and age group we have process all the three files i.e **movie.dat** , **rating.dat** and **user.dat**.
-       - We use the concept of **Job chaining** in MapReduce for doing these multiple tasks. 
-     
+       - We use the concept of **Job chaining** in MapReduce for doing these multiple tasks.
+       
+         ![](imgs/kpi_3.PNG)
      
      - We get movie_id **(key)** and genre **(value)** as output from **movieDataMapper** and movie_id **(key)** and concatenation of user_id+rating **(value)** from ratingDataMapper.
      - Output of both the mappers is processed at **dataReducer** and  user_id  **(key)** and genre+rating **(value)** is given as output.
@@ -122,5 +125,16 @@ Genres are pipe-separated and are selected from the following genres:
      - This is the final reducer which gets the input from the mapper and calculates the average rating. It produces average_rating **(key)** and concatination of age+occupation+genre **(value)** as the final output.
      
      
+     ### Code ### 
+     - Start the hadoop services. <br/>
+         ``` sbin/start-all.sh ```
        
+     - Copy movies.dat , ratings.dat and users.dat from local file system to inp1 , inp2, and inp3 folders respectively present in HDFS<br/>
+      ` bin/hdfs dfs -put  ../Desktop/movies.dat   /inp1 `<br/>
+       ` bin/hdfs dfs -put  ../Desktop/ratings.dat   /inp2 `<br/>
+       ` bin/hdfs dfs -put ../Desktop/users.dat   /inp3  `
+     -  **KPI 1**
+        - Running the jar file.
+        
+      
      
