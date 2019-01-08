@@ -82,7 +82,7 @@ Genres are pipe-separated and are selected from the following genres:
      - We need count of each movie to solve this problem and to do so we need to process data from **movies.dat** and **ratings.dat** files.
        - We use the concept of **Job chaining** in MapReduce for doing these multiple tasks. 
        
-       PICTURE here.
+      
        
      -  We get movie_id  **(key)**  and name **(value)** as output from **movieDataMapper** and movie_id **(key)**  and 1 **(value)** as output from **ratingDataMapper**.
      - Output of both the mappers is processed at **dataReducer** and  movie_id  **(key)** and its total count **(value)** is given as output.
@@ -97,7 +97,7 @@ Genres are pipe-separated and are selected from the following genres:
      - We need the average rating for each movie to solve this problem to do so we need to process data from **movies.dat** and **ratings.dat** files.
        - We use the concept of **Job chaining** in MapReduce for doing these multiple tasks. 
      
-     PICTURE HERE
+     
      
      - We get movie_id  **(key)**  and name **(value)** as output from **movieDataMapper** and movie_id **(key)**  and rating **(value)** as output from **ratingDataMapper**.
      - Output of both the mappers is processed in **dataReducer** and  movie_id  **(key)** and average rating **(value)** is given as output.
@@ -110,7 +110,7 @@ Genres are pipe-separated and are selected from the following genres:
      - To find average rating of a genre for each profession and age group we have process all the three files i.e **movie.dat** , **rating.dat** and **user.dat**.
        - We use the concept of **Job chaining** in MapReduce for doing these multiple tasks. 
      
-     PICTURE HERE
+     
      - We get movie_id **(key)** and genre **(value)** as output from **movieDataMapper** and movie_id **(key)** and concatenation of user_id+rating **(value)** from ratingDataMapper.
      - Output of both the mappers is processed at **dataReducer** and  user_id  **(key)** and genre+rating **(value)** is given as output.
      - Output of the reducer is given as input to **userGenreRatingMapper**,which gives user_id **(key)**  and concatenation of  genre+rating **(value)** as output.  
