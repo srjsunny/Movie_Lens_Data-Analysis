@@ -1,5 +1,5 @@
 # Movie_Lens_Data-Analysis
-The objective of this project is to analyse the Movie lens dataset and solve various KPIs.
+The objective of this project is to analyse the Movie lens dataset and solve various KPIs using Hadoop MapReduce framework.
 
 
 ## Table of Contents ##
