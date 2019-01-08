@@ -5,10 +5,10 @@ The objective of this project is to analyse the Movie lens dataset and solve var
 ## Table of Contents ##
  - [Data Format](#data-format)
  - [Prerequisites](#prerequisites)
- - KPIs()
-  - [KPI 1](#kpi-1)
-  - [KPI 2](#kpi-2)
-  - [KPI 3](#kpi-3)
+ - KPIs
+   - [KPI 1](#kpi-1)
+   - [KPI 2](#kpi-2)
+   - [KPI 3](#kpi-3)
  - [Code](#code)
  - [Output](#output)
 
@@ -87,7 +87,7 @@ Genres are pipe-separated and are selected from the following genres:
      - JDK
 
  
-  ## KPIs ##      
+     
   ## KPI 1 ##
     ### Recommend top 10 most watched movies. ###
      - We need count of each movie to solve this problem and to do so we need to process data from **movies.dat** and **ratings.dat** files.
