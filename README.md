@@ -2,7 +2,11 @@
 The objective of this project is to analyse the Movie lens dataset and solve various KPIs.
 
 
-### Data Format Used
+## Table of Contents ##
+ -  Data Format
+
+
+###  Data Format
  #### 1. movies: (movies.dat)
     - MovieID::Title::Genres
 
@@ -125,7 +129,7 @@ Genres are pipe-separated and are selected from the following genres:
      - This is the final reducer which gets the input from the mapper and calculates the average rating. It produces average_rating **(key)** and concatination of age+occupation+genre **(value)** as the final output.
      
      
-     ### Code ### 
+     ## Code ## 
      - Start the hadoop services. <br/>
          ``` sbin/start-all.sh ```
        
@@ -134,7 +138,25 @@ Genres are pipe-separated and are selected from the following genres:
        ` bin/hdfs dfs -put  ../Desktop/ratings.dat   /inp2 `<br/>
        ` bin/hdfs dfs -put ../Desktop/users.dat   /inp3  `
      -  **KPI 1**
-        - Running the jar file.
-        
+        - Giving output paths and using  yarn services to run jar the file. 
+        ![](imgs/Command.PNG)
+     
+     - **KPI 2**
+        - Giving output paths and using  yarn services to run jar the file. 
+        ![](imgs/command_1.PNG)
+      
+     - **KPI 3**
+       - Giving output paths and using  yarn services to run jar the file. 
+       ![](imgs/command_3.PNG)
       
      
+     ## Output ##
+     - **KPI 1**
+        ![](imgs/Output_KPI_1.PNG)
+        
+     - **KPI 2**
+        ![](imgs/Output_KPI_2.PNG)
+     
+     - **KPI 3**
+        ![](imgs/Output%20_KPI_3.PNG)
+       
